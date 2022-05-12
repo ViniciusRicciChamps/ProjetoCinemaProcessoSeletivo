@@ -19,7 +19,8 @@
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="20dp"
+        android:radius="5dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -89,18 +90,18 @@
                 android:id="@+id/botaoFavoritar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:backgroundTint="#8E24AA"
+                android:padding="20dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                app:icon="@drawable/ic_coracao"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                tools:ignore="SpeakableTextPresentCheck" />
         </LinearLayout>
         <?xml version="1.0" encoding="utf-8"?>
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-
-
-        </LinearLayout>
 
 
     </LinearLayout>
