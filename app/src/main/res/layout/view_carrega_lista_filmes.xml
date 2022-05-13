@@ -1,112 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#1E88E5"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewFilmes"
-        android:layout_width="match_parent"
-        android:layout_height="526dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        app:cardBackgroundColor="#5E35B1"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="1dp">
+    <ImageView
+        android:id="@+id/posterFilme"
+        android:layout_width="114dp"
+        android:layout_height="167dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="9dp"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/textoTituloFilme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/posterFilme"
-            android:layout_width="114dp"
-            android:layout_height="167dp"
-            android:layout_gravity="start"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:background="#FFFFFF"
-            android:scaleType="centerCrop" />
+    <TextView
+        android:id="@+id/textoTituloFilme"
+        android:layout_width="242dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="16dp"
+        android:text="dasdas"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textoTituloFilme"
-            android:layout_width="242dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center|right|top"
-            android:layout_marginTop="50dp"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:textStyle="normal"
-            android:typeface="sans"
-            tools:text="Thor" />
+    <TextView
+        android:id="@+id/textoIdFilme"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="14dp"
+        android:text="sdasasd"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoResenhaFilme" />
 
-        <TextView
-            android:id="@+id/textoDataLancamentoFilme"
-            android:layout_width="79dp"
-            android:layout_height="42dp"
-            android:layout_gravity="right|center_vertical"
-            android:layout_marginRight="163dp"
-            android:layout_marginBottom="135dp"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            android:typeface="sans"
-            tools:text="2022" />
+    <TextView
+        android:id="@+id/textoResenhaFilme"
+        android:layout_width="355dp"
+        android:layout_height="199dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="156dp"
+        android:text="asfasfa"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/posterFilme"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/textoIdFilme"
-            android:layout_width="114dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_marginBottom="60dp"
-            android:text="sdasasd"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            android:typeface="sans"
-            tools:text="asdsadasd" />
+    <TextView
+        android:id="@+id/textoNotaFilme"
+        android:layout_width="162dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="95dp"
+        android:text="dasdas"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/posterFilme"
+        app:layout_constraintTop_toBottomOf="@+id/textoDataLancamentoFilme" />
 
-        <TextView
-            android:id="@+id/textoResenhaFilme"
-            android:layout_width="355dp"
-            android:layout_height="199dp"
-            android:layout_gravity="bottom|center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="100dp"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:textStyle="normal"
-            android:typeface="sans"
-            tools:text="Neste filme somos apresentados aos asgardianos, seres imortais de outra dimensão, que, ao revelarem-se aos vikings, foram confundidos com deuses, iniciando a mitologia nórdica. Thor (papel de Chris Hemsworth) príncipe de Asgard, é jovem impetuoso e tolo e suas ações desencadeiam uma nova guerra contra os Gigantes do Gelo, liderados pelo Rei Laufey (Colm Feore). Banido para a Terra por seu pai, Odin (Anthony Hopkins), ele precisa aprender lições de humildade se quiser tornar-se digno de empunhar novamente o martelo Mjolnir e com ele seu poder imortal. Loki (Tom Hiddleston), meio-irmão de Thor e aspirante ao trono, cumpre seu papel como deus da trapaça e da mentira, arquitetando planos para eliminar a concorrência do irmão ao posto de Rei da Cidade Dourada. Pausa!" />
+    <TextView
+        android:id="@+id/textoDataLancamentoFilme"
+        android:layout_width="157dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="100dp"
+        android:text="sdfsdfsd"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/posterFilme"
+        app:layout_constraintTop_toBottomOf="@+id/textoTituloFilme" />
 
-        <TextView
-            android:id="@+id/textoNotaFilme"
-            android:layout_width="162dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="80dp"
-            android:layout_marginBottom="90dp"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            android:typeface="sans"
-            tools:text="Terror" />
+    <Button
+        android:id="@+id/botaoFavoritar"
+        android:layout_width="171dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#8E24AA"
+        android:padding="20dp"
+        android:paddingLeft="50dp"
+        android:paddingTop="100dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        app:icon="@drawable/ic_coracao"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoIdFilme"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <Button
-            android:id="@+id/botaoFavoritar"
-            android:layout_width="186dp"
-            android:layout_height="53dp"
-            android:layout_gravity="bottom|center"
-            android:backgroundTint="#8E24AA"
-            android:padding="20dp"
-            android:paddingLeft="50dp"
-            android:paddingTop="100dp"
-            android:paddingRight="0dp"
-            android:paddingBottom="0dp"
-            app:icon="@drawable/ic_coracao"
-            app:iconGravity="textEnd"
-            app:iconPadding="0dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
