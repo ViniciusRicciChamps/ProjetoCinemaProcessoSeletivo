@@ -6,7 +6,7 @@ public class Filmes {
     String id;
     String nome_filme;
     String poster_filme;
-    String genero_filme;
+    String nota_filme;
     String lancamento_filme;
     String resenha_filme;
 
@@ -14,7 +14,7 @@ public class Filmes {
         this.id = id;
         this.nome_filme = nome_filme;
         this.poster_filme = poster_filme;
-        this.genero_filme = genero_filme;
+        this.nota_filme = genero_filme;
         this.lancamento_filme = lancamento_filme;
         this.resenha_filme = resenha_filme;
     }
@@ -47,12 +47,12 @@ public class Filmes {
         this.poster_filme = poster_filme;
     }
 
-    public String getGenero_filme() {
-        return genero_filme;
+    public String getNota_filme() {
+        return nota_filme;
     }
 
-    public void setGenero_filme(String genero_filme) {
-        this.genero_filme = genero_filme;
+    public void setNota_filme(String nota_filme) {
+        this.nota_filme = nota_filme;
     }
 
     public String getLancamento_filme() {
