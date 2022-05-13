@@ -1,12 +1,14 @@
 package com.example.projetocinemaprocessoseletivo;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.example.projetocinemaprocessoseletivo.Model.Filmes;
+import com.example.projetocinemaprocessoseletivo.adapter.MovieAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static String JSON_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=f321a808e68611f41312aa8408531476&language=en-US&page=1";
 
     List<Filmes> listaFilmes;
-    CardView cardView;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         listaFilmes = new ArrayList<Filmes>();
-        cardView = findViewById(R.id.cardViewFilmes);
-
-
+        recyclerView = findViewById(R.id.listRecyclerView);
         GetData getData = new GetData();
         getData.execute();
     }
@@ -116,9 +116,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void ColocarDadosCardView(List<Filmes> listaFilmes){
 
-
+        MovieAdapter movieAdapter = new MovieAdapter(this, listaFilmes);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(movieAdapter);
 
     }
 

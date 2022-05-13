@@ -46,9 +46,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
         holder.resenha_filme.setText(filmeData.get(position).getResenha_filme());
 
 
-        Glide.with(contextFilme)
-                .load(filmeData.get(position).getPoster_filme())
-                .into(holder.poster_filme);
+        Glide.with(contextFilme).load(filmeData.get(position).getPoster_filme()).into(holder.poster_filme);
 
     }
 
