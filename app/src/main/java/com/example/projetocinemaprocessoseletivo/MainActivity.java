@@ -97,10 +97,10 @@ public class MainActivity extends AppCompatActivity {
 
                     filmes.setId(jsonObject1.getString("id"));
                     filmes.setNome_filme(jsonObject1.getString("original_title"));
-                    filmes.setLancamento_filme(jsonObject1.getString("2022-03-30"));
+                    filmes.setLancamento_filme(jsonObject1.getString("release_date"));
                     filmes.setNota_filme(jsonObject1.getString("vote_average"));
                     filmes.setResenha_filme(jsonObject1.getString("overview"));
-
+                    filmes.setPoster_filme(jsonObject1.getString("poster_path"));
                     listaFilmes.add(filmes);
 
                 }

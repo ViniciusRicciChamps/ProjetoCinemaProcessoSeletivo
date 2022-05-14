@@ -44,9 +44,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
         holder.nota_filme.setText(filmeData.get(position).getNota_filme());
         holder.lancamento_filme.setText(filmeData.get(position).getLancamento_filme());
         holder.resenha_filme.setText(filmeData.get(position).getResenha_filme());
+        Glide.with(contextFilme)
+                .load("https://image.tmdb.org/t/p/w500"+filmeData.get(position).getPoster_filme())
+                .into(holder.poster_filme);
 
-
-        Glide.with(contextFilme).load(filmeData.get(position).getPoster_filme()).into(holder.poster_filme);
 
     }
 

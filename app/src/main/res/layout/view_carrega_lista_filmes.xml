@@ -4,76 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
     android:background="#1E88E5"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/posterFilme"
-        android:layout_width="114dp"
-        android:layout_height="167dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="147dp"
+        android:layout_height="221dp"
+        android:layout_marginStart="9dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="9dp"
         android:background="#FFFFFF"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/textoTituloFilme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textoTituloFilme"
-        android:layout_width="242dp"
-        android:layout_height="50dp"
+        android:layout_width="214dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="sans-serif-black"
+        android:paddingLeft="2dp"
+        android:shadowRadius="10"
         android:text="dasdas"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textAlignment="textStart"
+        android:textColor="#0C0808"
+        android:textSize="16sp"
         android:textStyle="normal"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/posterFilme"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textoIdFilme"
         android:layout_width="114dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="269dp"
         android:text="sdasasd"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:textStyle="normal"
         android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoResenhaFilme" />
 
     <TextView
         android:id="@+id/textoResenhaFilme"
-        android:layout_width="355dp"
-        android:layout_height="199dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="156dp"
+        android:layout_width="354dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="29dp"
+        android:paddingLeft="10dp"
         android:text="asfasfa"
         android:textColor="@android:color/white"
         android:textSize="12sp"
         android:textStyle="normal"
         android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/posterFilme"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textoNotaFilme" />
 
     <TextView
         android:id="@+id/textoNotaFilme"
         android:layout_width="162dp"
         android:layout_height="40dp"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="95dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="65dp"
+        android:paddingLeft="5dp"
         android:text="dasdas"
         android:textColor="@android:color/white"
         android:textSize="16sp"
@@ -81,23 +87,24 @@
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/posterFilme"
-        app:layout_constraintTop_toBottomOf="@+id/textoDataLancamentoFilme" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textoDataLancamentoFilme"
         android:layout_width="157dp"
         android:layout_height="37dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="71dp"
+        android:paddingLeft="5dp"
         android:text="sdfsdfsd"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="normal"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/posterFilme"
-        app:layout_constraintTop_toBottomOf="@+id/textoTituloFilme" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/botaoFavoritar"
@@ -121,5 +128,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoIdFilme"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="88dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="139dp"
+        android:editable="false"
+        android:text="Lançamento:"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/posterFilme"
+        app:layout_constraintTop_toBottomOf="@+id/textoTituloFilme" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="52dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="175dp"
+        android:paddingLeft="2dp"
+        android:text="Nota:"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/posterFilme"
+        app:layout_constraintTop_toBottomOf="@+id/textoDataLancamentoFilme" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
