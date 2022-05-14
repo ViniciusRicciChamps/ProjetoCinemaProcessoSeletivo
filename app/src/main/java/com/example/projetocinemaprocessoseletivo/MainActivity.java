@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.projetocinemaprocessoseletivo.Model.Filmes;
 import com.example.projetocinemaprocessoseletivo.adapter.MovieAdapter;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     List<Filmes> listaFilmes;
     RecyclerView recyclerView;
+    ImageView cabecalho;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
         listaFilmes = new ArrayList<Filmes>();
         recyclerView = findViewById(R.id.listRecyclerView);
+        cabecalho = findViewById(R.id.imageView2);
+
+        Glide.with(this)
+                .load(R.drawable.img)
+                .into(cabecalho);
+
         GetData getData = new GetData();
         getData.execute();
     }
