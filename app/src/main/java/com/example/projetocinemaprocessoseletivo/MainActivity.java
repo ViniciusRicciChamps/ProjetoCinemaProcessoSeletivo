@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
         listaFilmes = new ArrayList<Filmes>();
         recyclerView = findViewById(R.id.listRecyclerView);
-        cabecalho = findViewById(R.id.imageView2);
+       /* cabecalho = findViewById(R.id.imageView2);
 
         Glide.with(this)
                 .load(R.drawable.img)
                 .into(cabecalho);
-
+*/
         GetData getData = new GetData();
         getData.execute();
     }

@@ -1,6 +1,7 @@
 package com.example.projetocinemaprocessoseletivo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -39,14 +41,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
     @Override
     public void onBindViewHolder(@NonNull MinhaView holder, int position) {
 
-        holder.id_filme.setText(filmeData.get(position).getId());
+//        holder.id_filme.setText(filmeData.get(position).getId());
         holder.nome_filme.setText(filmeData.get(position).getNome_filme());
         holder.nota_filme.setText(filmeData.get(position).getNota_filme());
         holder.lancamento_filme.setText(filmeData.get(position).getLancamento_filme());
-        holder.resenha_filme.setText(filmeData.get(position).getResenha_filme());
+       // holder.resenha_filme.setText(filmeData.get(position).getResenha_filme());
         Glide.with(contextFilme)
                 .load("https://image.tmdb.org/t/p/w500"+filmeData.get(position).getPoster_filme())
                 .into(holder.poster_filme);
+
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              //  Intent intent = new Intent(contextFilme, .class)
+            }
+        });
 
 
     }
@@ -64,16 +73,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
         TextView nota_filme;
         TextView lancamento_filme;
         TextView resenha_filme;
+        ConstraintLayout constraintLayout;
 
         public MinhaView(@NonNull View itemView) {
             super(itemView);
 
-            id_filme = itemView.findViewById(R.id.textoIdFilme);
+           // id_filme = itemView.findViewById(R.id.textoIdFilme);
             nome_filme = itemView.findViewById(R.id.textoTituloFilme);
             poster_filme = itemView.findViewById(R.id.posterFilme);
             nota_filme = itemView.findViewById(R.id.textoNotaFilme);
             lancamento_filme = itemView.findViewById(R.id.textoDataLancamentoFilme);
-            resenha_filme = itemView.findViewById(R.id.textoResenhaFilme);
+            //resenha_filme = itemView.findViewById(R.id.textoResenhaFilme);
+            constraintLayout = itemView.findViewById(R.id.layout_info_filme);
 
         }
     }
