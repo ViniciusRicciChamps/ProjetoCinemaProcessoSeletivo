@@ -9,18 +9,28 @@ public class Filmes {
     String nota_filme;
     String lancamento_filme;
     String resenha_filme;
+    String idioma_filme;
 
-    public Filmes(String id, String nome_filme, String poster_filme, String genero_filme, String lancamento_filme, String resenha_filme) {
+    public Filmes(String id, String nome_filme, String poster_filme, String genero_filme, String lancamento_filme, String resenha_filme, String idioma_filme) {
         this.id = id;
         this.nome_filme = nome_filme;
         this.poster_filme = poster_filme;
         this.nota_filme = genero_filme;
         this.lancamento_filme = lancamento_filme;
         this.resenha_filme = resenha_filme;
+        this.idioma_filme = idioma_filme;
     }
 
 
     public Filmes() {
+    }
+
+    public String getIdioma_filme() {
+        return idioma_filme;
+    }
+
+    public void setIdioma_filme(String idioma_filme) {
+        this.idioma_filme = idioma_filme;
     }
 
     public String getId() {

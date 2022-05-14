@@ -1,7 +1,9 @@
 package com.example.projetocinemaprocessoseletivo.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.projetocinemaprocessoseletivo.DetalhesFilme;
 import com.example.projetocinemaprocessoseletivo.Model.Filmes;
 import com.example.projetocinemaprocessoseletivo.R;
 
@@ -39,7 +42,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MinhaView holder, int position) {
+    public void onBindViewHolder(@NonNull MinhaView holder, @SuppressLint("RecyclerView") int position) {
 
 //        holder.id_filme.setText(filmeData.get(position).getId());
         holder.nome_filme.setText(filmeData.get(position).getNome_filme());
@@ -53,7 +56,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  Intent intent = new Intent(contextFilme, .class)
+                Intent intent = new Intent(contextFilme, DetalhesFilme.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("id", filmeData.get(position).getId());
+                bundle.putString("original_title", filmeData.get(position).getNome_filme());
+                bundle.putString("vote_average", filmeData.get(position).getNota_filme());
+                bundle.putString("release_date", filmeData.get(position).getLancamento_filme());
+                bundle.putString("overview", filmeData.get(position).getResenha_filme());
+                bundle.putString("poster_path", filmeData.get(position).getPoster_filme());
+                bundle.putString("original_language", filmeData.get(position).getIdioma_filme());
+
+                intent .putExtras(bundle);
+
+                contextFilme.startActivity(intent);
+
             }
         });
 

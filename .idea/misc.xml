@@ -6,14 +6,20 @@
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.241" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/borda_arredondada.xml" value="0.241" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/borda_arredondadaBranca.xml" value="0.241" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/borda_arredondada_branca.xml" value="0.241" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/gradiente_fonte.xml" value="0.241" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/gradiente_fundo.xml" value="0.241" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/ic_coracao.xml" value="0.121" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/ic_coracao_vermelho.xml" value="0.136" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.241" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/drawable/seletor_coracao.xml" value="0.121" />
-        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_detalhes_filme.xml" value="0.264" />
-        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_detalhes_filme.xml" value="0.2" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_menu_principal.xml" value="0.264" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_pesquisar_filme.xml" value="0.25" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/activity_pesquisar_filmes.xml" value="0.264" />
         <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/carregar_mais_views.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/view_carrega_lista_filmes.xml" value="0.264" />
+        <entry key="..\:/Users/Vinicius/AndroidStudioProjects/ProjetoCinemaProcessoSeletivo/app/src/main/res/layout/view_carrega_lista_filmes.xml" value="0.536" />
       </map>
     </option>
   </component>

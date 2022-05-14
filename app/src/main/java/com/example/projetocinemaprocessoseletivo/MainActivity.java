@@ -6,11 +6,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.projetocinemaprocessoseletivo.Model.Filmes;
 import com.example.projetocinemaprocessoseletivo.adapter.MovieAdapter;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,12 +37,19 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView cabecalho;
 
+    FloatingActionButton botaoFlutuantePesquisar, botaoFlutuanteFavoritos;
+    ExtendedFloatingActionButton botaoFlutuantePrincipal;
+    TextView textViewFlutuantePesquisar, getTextViewFlutuanteFavoritos;
+   
+    
+    Boolean isAllFabsVisible;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        metodoBotaoFlutuante();
         listaFilmes = new ArrayList<Filmes>();
         recyclerView = findViewById(R.id.listRecyclerView);
        /* cabecalho = findViewById(R.id.imageView2);
@@ -49,6 +60,81 @@ public class MainActivity extends AppCompatActivity {
 */
         GetData getData = new GetData();
         getData.execute();
+    }
+    
+    public void metodoBotaoFlutuante(){
+        botaoFlutuantePrincipal = findViewById(R.id.botaoFlutuantePrincipal);
+        botaoFlutuantePesquisar = findViewById(R.id.botao_Flutuante_Pesquisa);
+        botaoFlutuanteFavoritos = findViewById(R.id.botao_Flutuante_Favoritos);
+        textViewFlutuantePesquisar =
+                findViewById(R.id.textViewFlutuantePesquisar);
+        getTextViewFlutuanteFavoritos =
+                findViewById(R.id.textViewFlutuanteFavoritos);
+
+        botaoFlutuantePesquisar.setVisibility(View.GONE);
+        botaoFlutuanteFavoritos.setVisibility(View.GONE);
+        textViewFlutuantePesquisar.setVisibility(View.GONE);
+        getTextViewFlutuanteFavoritos.setVisibility(View.GONE);
+
+        isAllFabsVisible = false;
+
+        botaoFlutuantePrincipal.shrink();
+
+        botaoFlutuantePrincipal.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (!isAllFabsVisible) {
+
+                            botaoFlutuantePesquisar.show();
+                            botaoFlutuanteFavoritos.show();
+                            textViewFlutuantePesquisar
+                                    .setVisibility(View.VISIBLE);
+                            getTextViewFlutuanteFavoritos
+                                    .setVisibility(View.VISIBLE);
+
+                            botaoFlutuantePrincipal.extend();
+
+                            isAllFabsVisible = true;
+                        } else {
+
+                            botaoFlutuantePesquisar.hide();
+                            botaoFlutuanteFavoritos.hide();
+                            textViewFlutuantePesquisar
+                                    .setVisibility(View.GONE);
+                            getTextViewFlutuanteFavoritos
+                                    .setVisibility(View.GONE);
+
+                            botaoFlutuantePrincipal.shrink();
+
+                            isAllFabsVisible = false;
+                        }
+                    }
+                });
+
+        botaoFlutuanteFavoritos.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText
+                                (MainActivity
+                                                .this, "Person Added",
+                                        Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        botaoFlutuantePesquisar.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText
+
+                                (MainActivity
+                                                .this, "Alarm Added",
+                                        Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
 
     public class GetData extends AsyncTask<String, String, String>{
@@ -110,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
                     filmes.setNota_filme(jsonObject1.getString("vote_average"));
                     filmes.setResenha_filme(jsonObject1.getString("overview"));
                     filmes.setPoster_filme(jsonObject1.getString("poster_path"));
+                    filmes.setIdioma_filme(jsonObject1.getString("original_language"));
                     listaFilmes.add(filmes);
 
                 }
