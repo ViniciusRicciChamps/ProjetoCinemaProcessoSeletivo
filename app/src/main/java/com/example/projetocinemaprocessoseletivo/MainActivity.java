@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -37,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView cabecalho;
 
+
     FloatingActionButton botaoFlutuantePesquisar, botaoFlutuanteFavoritos;
     ExtendedFloatingActionButton botaoFlutuantePrincipal;
     TextView textViewFlutuantePesquisar, getTextViewFlutuanteFavoritos;
-   
-    
-    Boolean isAllFabsVisible;
+
+    Boolean botoesFlutuantesVisivel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +51,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         metodoBotaoFlutuante();
+
         listaFilmes = new ArrayList<Filmes>();
         recyclerView = findViewById(R.id.listRecyclerView);
-       /* cabecalho = findViewById(R.id.imageView2);
-
-        Glide.with(this)
-                .load(R.drawable.img)
-                .into(cabecalho);
-*/
         GetData getData = new GetData();
         getData.execute();
+
+
     }
     
     public void metodoBotaoFlutuante(){
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         textViewFlutuantePesquisar.setVisibility(View.GONE);
         getTextViewFlutuanteFavoritos.setVisibility(View.GONE);
 
-        isAllFabsVisible = false;
+        botoesFlutuantesVisivel = false;
 
         botaoFlutuantePrincipal.shrink();
 
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!isAllFabsVisible) {
+                        if (!botoesFlutuantesVisivel) {
 
                             botaoFlutuantePesquisar.show();
                             botaoFlutuanteFavoritos.show();
@@ -95,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
                             botaoFlutuantePrincipal.extend();
 
-                            isAllFabsVisible = true;
+                            botoesFlutuantesVisivel = true;
                         } else {
 
                             botaoFlutuantePesquisar.hide();
@@ -107,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
                             botaoFlutuantePrincipal.shrink();
 
-                            isAllFabsVisible = false;
+                            botoesFlutuantesVisivel = false;
                         }
                     }
                 });
@@ -125,13 +123,11 @@ public class MainActivity extends AppCompatActivity {
 
         botaoFlutuantePesquisar.setOnClickListener(
                 new View.OnClickListener() {
+
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText
-
-                                (MainActivity
-                                                .this, "Alarm Added",
-                                        Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(getApplicationContext(), activityPesquisarFilmes.class);
+                        startActivity(intent1);
                     }
                 });
 
