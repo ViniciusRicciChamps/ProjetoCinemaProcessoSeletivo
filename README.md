@@ -3,7 +3,7 @@ Projeto criado com etapa do processo seletivo para desenvolvedor Mobile Junior. 
 
 
 
-Foi implementado a opção de buscar Filmes, salvar nos favoritos. Como o tempo era muito pouco não deu para implementar ou ajustar algumas coisa.
+Foi implementado a opção de buscar Filmes, Lançamentos e  salvar nos favoritos. Como o tempo era muito pouco não deu para implementar ou ajustar algumas coisa.
 
 
 ********* OBS ************
@@ -12,15 +12,15 @@ Utilizar a internet para usar.
 
 
 
-android {
-    compileSdk 32 ATENÇÃO A API
+    android {
+        compileSdk 32 ATENÇÃO AO SDK
 
-    defaultConfig {
-        applicationId "com.example.projetocinemaprocessoseletivo"
-        minSdk 21  ********** O MINIMO
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        defaultConfig {
+            applicationId "com.example.projetocinemaprocessoseletivo"
+            minSdk 21  ********** O MINIMO
+            targetSdk 32
+            versionCode 1
+            versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
