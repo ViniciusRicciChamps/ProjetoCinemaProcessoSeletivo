@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -114,10 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText
-                                (MainActivity
-                                                .this, "Person Added",
-                                        Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), listaFavoritos.class);
+                        startActivity(intent);
                     }
                 });
 

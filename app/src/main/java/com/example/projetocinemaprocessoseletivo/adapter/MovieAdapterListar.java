@@ -16,19 +16,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.projetocinemaprocessoseletivo.DetalhesFilme;
+import com.example.projetocinemaprocessoseletivo.Model.Filmes;
 import com.example.projetocinemaprocessoseletivo.R;
 
 import java.util.List;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
+public class MovieAdapterListar extends RecyclerView.Adapter<MovieAdapterListar.MinhaView> {
 
 
     private Context contextFilme;
-    private List<com.example.projetocinemaprocessoseletivo.Model.Filmes> filmeData;
+    private List<Filmes> filmeData;
 
-    public MovieAdapter(Context contextFilme, List<com.example.projetocinemaprocessoseletivo.Model.Filmes> filmeData) {
+
+
+    public MovieAdapterListar(Context contextFilme, List<Filmes> filmeData) {
         this.contextFilme = contextFilme;
-        this.filmeData = filmeData;
+        this.filmeData =  filmeData;
     }
 
     @NonNull
@@ -46,10 +49,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MinhaView> {
         holder.nome_filme.setText(filmeData.get(position).getNome_filme());
         holder.nota_filme.setText(filmeData.get(position).getNota_filme());
         holder.lancamento_filme.setText(filmeData.get(position).getLancamento_filme());
-
         Glide.with(contextFilme)
                 .load("https://image.tmdb.org/t/p/w500"+filmeData.get(position).getPoster_filme())
                 .into(holder.poster_filme);
+
 
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
